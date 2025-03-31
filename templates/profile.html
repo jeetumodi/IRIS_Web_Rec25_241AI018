@@ -1,0 +1,35 @@
+
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+            <h2>Profile | IRIS</h2>
+</div>
+<div class="container mt-4">
+    <h2 class="text-center">{{ profile.user.username }}'s Profile</h2>
+    
+    <div class="card mx-auto bg-secondary text-white profile-card" style="max-width: 400px; box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); border-radius: 15px;">
+        {% if profile.profile_picture %}
+            <img src="{{ profile.profile_picture.url }}" class="card-img-top rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 120px;">
+        {% else %}
+            <img src="{% static 'default-profile.png' %}" class="card-img-top rounded-circle mx-auto mt-3" alt="Default Profile Picture" style="width: 120px;">
+        {% endif %}
+        
+        <div class="card-body text-center">
+            <h4 class="card-title">{{ profile.full_name }}</h4>
+            <p class="card-text"><strong>Email:</strong> {{ profile.user.email }}</p>
+            <p class="card-text"><strong>Phone:</strong> {{ profile.phone_number }}</p>
+            <p class="card-text"><strong>DOB:</strong> {{ profile.date_of_birth }}</p>
+            <p class="card-text"><strong>Address:</strong> {{ profile.address }}</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'logout' %}" class="btn btn-danger">
+            <i class="bi bi-box-arrow-right"></i> Logout
+        </a>
+    </div>
+</div>
+{% endblock %}

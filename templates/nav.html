@@ -1,0 +1,84 @@
+ <style>
+        :root {
+            --bs-secondary: #d3d3d3;
+        }
+
+        .drop {
+            list-style-type: none !important;
+            display: flex;
+            gap: 20px;
+        }
+
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary rounded-3 px-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">IRIS</a>
+                <div class="d-flex me-auto pe-auto">
+
+                    <ul class="drop navbar-nav">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-secondary dropdown-toggle me-2" type="button"
+                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Institue
+                            </button>
+                            <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="drop navbar-nav">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-secondary dropdown-toggle me-2" type="button"
+                                id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                Academics
+                            </button>
+                            <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="drop navbar-nav">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-secondary dropdown-toggle me-2" type="button"
+                                id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                Campus
+                            </button>
+                            <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton3">
+                                <li><a class="dropdown-item" href="{% url 'user_bookings' %}">Sports Dashboard</a></li>
+                                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                <li><a class="dropdown-item" href="#">Link 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <form class="d-flex">
+                    <input class="form-control me-2 mx-auto" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light me-2 mx-auto" type="submit">Search</button>
+                </form>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle p-0" type="button" id="profileDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="border: none; background: none;">
+                        <img class="rounded-5"
+                            src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3JtNjA5LXNvbGlkaWNvbi13LTAwMi1wLnBuZw.png"
+                            height="30px">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" id="proflie" href="{% url 'profile' %}">Profile</a></li>
+                        <!--this is #profile-->
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
