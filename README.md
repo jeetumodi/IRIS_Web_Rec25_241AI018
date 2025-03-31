@@ -26,11 +26,15 @@ https://drive.google.com/drive/folders/1zOBIwvGSrMgbCWyRdQnkED5YAORi6NNb?usp=sha
 # login details
 
 Booking manager:
-    username: BookingAdmin
-    password: 1234
+
+username: BookingAdmin
+password: 1234
 
 students:
-    usernames: stundent1,student2,student3
-    password: @nitk1234
+
+usernames: stundent1,student2,student3
+password: @nitk1234
+
+    
     for all the students user name password is same
     
