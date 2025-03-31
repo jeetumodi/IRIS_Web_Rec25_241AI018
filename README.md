@@ -1,5 +1,5 @@
 # sports_booking
-
+# ensure that python is install
 TO use this the first step is to create an enviroment variable
 
 step 1:
@@ -20,4 +20,6 @@ step 4:
 
 step 5:
     create src folder inside the virual environment folder and paste all the file from the git hub   repsitory
-    
+
+# screenshots of the website
+https://drive.google.com/drive/folders/1zOBIwvGSrMgbCWyRdQnkED5YAORi6NNb?usp=sharing
