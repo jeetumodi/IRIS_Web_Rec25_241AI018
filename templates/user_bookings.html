@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+
+
+{% block content %}
+<div class="container mt-4">
+<h2>Sports Dashboard |My Bookings</h2>
+<table class="table table-bordered table-striped" style="background-color: #f8f9fa; border: 1px solid #dee2e6;">
+    <thead class="thead-dark">
+        <tr>
+            <th>Equipment</th>
+            <th>Infrastructure</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.equipment.name|default:"-" }}</td>
+            <td>{{ booking.infrastructure.name|default:"-" }}</td>
+            <td>{{ booking.start_time|date:"d M Y, H:i" }}</td>
+            <td>{{ booking.end_time|date:"d M Y, H:i" }}</td>
+            <td>
+                {% if booking.status == "Confirmed" %}
+                    <span class="text-success font-weight-bold">{{ booking.status }}</span>
+                {% elif booking.status == "Pending" %}
+                    <span class="text-warning font-weight-bold">{{ booking.status }}</span>
+                {% elif booking.status == "Cancelled" %}
+                    <span class="text-danger font-weight-bold">{{ booking.status }}</span>
+                {% else %}
+                    {{ booking.status }}
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" class="text-center text-muted font-weight-bold">No bookings found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'book_equipment' %}" class="btn btn-primary font-weight-bold">
+    BOOK NEW EQUIPMENT
+</a>
+</div>
+{% endblock %}
